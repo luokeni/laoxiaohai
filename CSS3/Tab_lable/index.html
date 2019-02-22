@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body,li,ul,input,a{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        .wrapper{
+            width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 0;
+            background-color: #666;
+        }
+        .wrapper .title ul{
+            font-size: 0;
+        }
+        .wrapper .title ul li{
+            display: inline-block;
+            width: 200px; 
+            font-size: 30px;
+        }
+        label{
+            display:block;
+            width: 200px;
+            height: 40px;
+        }
+        .main ul{
+            display: none;
+            padding:30px 0;
+        }
+        input{
+            display: none;
+        }
+        .main ul li{
+            width: 600px;
+            height: 30px;
+            margin: 0 50px;
+            text-align: left;
+            line-height: 1;
+        }
+        .main li a{
+            color: white;
+        }
+        .main li a:hover{
+            color: red;
+        }
+        #new:checked ~.main .news,#sport:checked ~ .main .sports,#fash:checked ~.main .fashion{
+            display: block;
+            font-size: 15px;
+            background-color: gray;
+        }
+        #new:checked~.title .new,#sport:checked~.title .sport,#fash:checked~.title .fash{
+            background-color: gray;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <input type="radio" name="tabs" value="a" id="new" checked>
+        <input type="radio" name="tabs" value="b" id="sport">
+        <input type="radio" name="tabs" value="c" id="fash">
+        <nav class="title">
+            <ul>
+                <li class="new">
+                   <label for="new">新闻</label> 
+                </li>
+                <li class="sport">
+                    <label for="sport">体育</label>
+                </li>
+                <li class="fash">
+                    <label for="fash">时尚</label>
+                </li>
+            </ul>
+        </nav>
+        <div class="main">
+            <ul class="news">
+                <li><a href="javascript:;">不限量套餐退市 三大运营商资费套餐火速“改头换面”</a></li>
+                <li><a href="#"> 税务总局：10月起月收入2万元以下者税负可降50%以上</a></li>
+                <li><a href="#">消防部队正式移交应急管理部 17万火场英雄脱下军装</a></li>
+                <li><a href="#">薄熙来原秘书案子，近期再有消息</a></li>
+                <li><a href="#">薄熙来原秘书案子，近期再有消息</a></li>
+            </ul>
+            <ul class="sports">
+                <li><a href="#"> 聚焦-[丁彦雨航谈签发展联盟：nba是一直追逐的梦]</a></li>
+                <li><a href="#"> 比赛-[奥迪23分步行者胜骑士][沃克20分黄蜂擒公牛]</a></li>
+                <li><a href="#">亮点-[班巴有技术又有爱][奇才双枪率7人上双胜纽约]</a></li>
+                <li><a href="#">湖人-[詹皇安慰马刺首发控卫 湖人官方宣布裁两人]</a></li>
+            </ul>
+            <ul class="fashion">
+                <li><a href="#">滴滴收购ofo意向书曝光？滴滴：从未有收购ofo意向</a></li>
+                <li><a href="#">峰回路转！华为表示已收到印度政府参与5G试验邀请</a></li>
+                <li><a href="#">“不限流量套餐”下线 运营商套餐改名继续忽悠用户</a></li>
+                <li><a href="#">发布5天就遭下线！Win10最短命升级叫停：会无故删文件</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

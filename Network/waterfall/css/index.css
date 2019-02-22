@@ -1,0 +1,22 @@
+body,ul,li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+.list{
+    display: inline-block;
+}
+.list li{
+    float: left;
+    border: 2px solid black;
+}
+.clearfix::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.item img{
+    width: 320px;
+    vertical-align: bottom;
+}

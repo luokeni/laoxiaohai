@@ -1,0 +1,96 @@
+body,ul,li,p{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    
+}
+li,a{
+    list-style: none;
+    text-decoration: none;
+}
+header{
+    height: 6%;
+    width: 100%;
+    background-color: #e3e4e5;
+    vertical-align: middle;
+    overflow: hidden;
+}
+.header-left{
+    float: left;
+    height: 60px;
+    line-height: 60px;  
+}
+.header-right{
+    float: right;
+    height: 60px;
+    line-height: 60px;  
+}
+.header-left li, .header-right li{
+    display: inline-block;
+    width: 90px;
+    text-align: center;
+}
+header a:hover{
+    color: #f10215;
+}
+a{
+    color: black;
+}
+.centerbg{
+    height: 84%;
+    background-image: url(../images/timg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+nav{
+    float: left;
+    height: 100%;
+    width: 200px;
+}
+.menu{ 
+    width: 200px;
+    height: 100%;
+    text-align: center;
+    background-color: #98b5cf;
+}
+.menu li{
+    height: 25%;
+    font-size: 40px;
+    line-height: 175px;
+}
+main{   
+    margin-left: 200px;
+    height: 100%;
+    background-color: dimgray;
+    color: aliceblue;
+}
+.content1{
+    display: none;
+}
+.content2{
+    display: none;
+}
+.content3{
+    display: none;
+}
+.content4{
+    display: none;
+}
+.active{
+    display: block;   
+    width: 100%;
+    height: 200px;
+    font-size: 20px; 
+}
+
+footer { 
+    width: 100%;
+    height: 10%;
+    background-color: #e3e4e5;
+    text-align: center;
+}

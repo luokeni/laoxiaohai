@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            perspective: 600px;
+        }
+        .wrapper{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 200px auto;
+            transform-style: preserve-3d;
+            transform: rotateX(-30deg);
+            animation: move 3s linear infinite;
+        }
+        @keyframes move{
+            0%{
+                transform: rotate3d(1,1,1,0deg);
+            }
+            100%{
+                transform: rotate3d(1,1,1,360deg);
+            }
+        }
+        .wrapper .item{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            line-height: 200px;
+            text-align: center;
+            opacity: 0.5;
+        }
+        .item:nth-child(1){
+            background-color: greenyellow;
+            transform: translateZ(100px);
+        }
+        .item:nth-child(2){
+            background-color: red;
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        .item:nth-child(3){
+            background-color: blue;
+            transform: rotateX(180deg) translateZ(100px);
+        }
+        .item:nth-child(4){
+            background-color: orange;
+            transform: rotateX(270deg) translateZ(100px);
+        }
+        .item:nth-child(5){
+            background-color: dimgrey;
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        .item:nth-child(6){
+            background-color: navajowhite;
+            transform: rotateX(270deg) translateZ(100px);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="wrapper">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+        </div>
+    </div>
+</body>
+</html>

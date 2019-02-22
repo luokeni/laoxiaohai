@@ -1,0 +1,60 @@
+body,.equipement .wrapper .send .btn,
+.equipement .wrapper .send .input{
+    margin: 0;
+    padding: 0;
+}
+.equipement{
+    width: 1075px;
+    height: 594px;
+    background:url(../images/bg.png) no-repeat;
+    margin: 50px auto;
+    position: relative;
+}
+.equipement .wrapper{
+   width: 774px;
+   height: 490px;
+   position: absolute;
+   top:30px;
+   left: 151px;
+}
+.equipement .wrapper .main{
+    width: 774px;
+    height: 391px;
+    position: relative;
+    overflow: hidden;
+}
+.main span {
+    position: absolute;
+    white-space: nowrap;
+}
+.main video{
+    width: 100%;
+    height: 100%;
+}
+.equipement .wrapper .send{
+    width: 774px;
+    height: 33px;
+    text-align: center;
+    
+}
+.equipement .wrapper .send .input{
+    width: 500px;
+    height: 30px;
+    border-radius: 10px 0 0 10px;
+    border: 0;
+    outline: 0;
+    vertical-align: text-bottom;
+    text-indent: 10px;
+}
+.equipement .wrapper .send .btn{
+    width: 80px;
+    height: 30px;
+    border: 0;
+    outline: 0;
+    line-height: 1;
+    background-color: orange;
+    border-radius: 0 10px 10px 0;
+    font-size: 16px;
+    color: aliceblue;
+    vertical-align: text-bottom;
+}

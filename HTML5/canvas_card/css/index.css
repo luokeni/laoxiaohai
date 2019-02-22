@@ -1,0 +1,9 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+#mycanvas{
+    border: 1px solid pink;
+    background-repeat: no-repeat;
+    background-position: center;
+}

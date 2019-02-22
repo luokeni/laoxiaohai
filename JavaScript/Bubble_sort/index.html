@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <style>
+        body,li{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        body{
+            background-color: #ccc;
+        }
+        #box{
+            position: relative;
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .item{
+            position: absolute;
+            margin-left: 5px;
+            width: 25px;
+            text-align: center;
+            font-size: 10px;
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id = "box"></div>
+    <script>
+        function f(arr){
+            //冒泡排序算法
+            var stepArr = [];
+            var time = 0;
+            function bubbleSort(arr){
+                var oBox = document.getElementById('box');
+                //用来存每一步内容的数组
+                var len = arr.length;
+                if(arr.length<=1){
+                    return arr;
+                };
+                for(var i = 0; i < len; i++){//外层循环控制循环趟数，总数是arr.length
+                    for(var j = 0; j < len -i; j++){//内层循环为当前i趟数，所需要比较的次数
+                    //我们在上一次循环的时候已经对于arr.Length- i之前的位数进行排序过 不用再进行无用的循环
+                        if(arr[j] > arr[j + 1]){
+                            var temp = arr[j];
+                            arr[j] = arr[j + 1];
+                            arr[j + 1] = temp;
+                            stepArr.push(arr.slice());//记录每一次的变化，数组中嵌套数组
+                        }
+                    }          
+                }
+                
+                return stepArr;
+            }
+            //创建可视化区域
+            function creatList(arr){
+                var oBox = document.getElementById('box');
+                oBox.innerHTML = '';//每次运行前，把之前的清空。
+                var len = arr.length;
+                for(var i = 0; i < len ; i++){
+                    var oBox = document.getElementById('box');
+                    var oLi = document.createElement('li');
+                    //控制每个li的left的值，要考虑一下设置的margin-left
+                    oLi.style.left = i*25 + i*5 +'px';
+                    oLi.style.height = 8*arr[i] + 'px';
+                    oLi.innerText = arr[i];
+                    //为li添加class类名
+                    oLi.setAttribute('class','item');
+                    oBox.appendChild(oLi);
+                }
+                
+            }
+            //绘制动画效果
+            function move(arr){
+                console.log(arr)
+                var stepArr = bubbleSort(arr);
+                var time = 500;
+                stepArr.forEach(function(item,index){
+                    setTimeout(function(){
+                        creatList(item);
+                    },index * time)
+                });
+            }
+            move(arr);
+
+                // 实现动画效果
+                // function move(stepArr){
+                //     time1 = setInterval(function(steparr){
+                //         console.log(stepArr[2])
+                //         console.log(Object.prototype.toString.call(stepArr))
+                //         // steparr.forEach(function(item, index){
+                //         //     creatList(item);
+                //         //     console.log(index);
+                //         // })
+                //         // creatList(stepArr[2]);
+                
+                //         // console.log(2);
+                //     },1000)
+                //     console.log(stepArr);
+                // }
+
+        }
+        var array = [23,56,4,2,3,10,6,9,2,65];
+        f(array);
+
+        // move(stepArr);
+    </script>
+</body>
+</html>

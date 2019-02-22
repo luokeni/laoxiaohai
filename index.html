@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Nicole</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=530px, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" href="./assets/css/main.css" />
+	</head>
+	<body>
+
+		<!-- Nav -->
+			<nav id="nav">
+				<ul class="container">
+					<li><a href="#top">首页</a></li>
+					<li><a href="#portfolio">项目展示区</a></li>
+					<li><a href="#contact">关于我</a></li>
+				</ul>
+			</nav>
+
+		<!-- Home -->
+			<div class="wrapper style1 first">
+				<article class="container" id="top">
+					<div class="row">
+						<div class="4u 12u(mobile)">
+							<span class="image fit"><img src="./assets/images/me.png" alt="" /></span>
+						</div>
+						<div class="8u 12u(mobile)">
+							<header>
+								<h1><strong>此梅 </strong>在<strong> 前端</strong> 的路上...</h1>
+							</header>
+							<p>人类要在竞争中求生存，便要奋斗。</p>
+							<a href="#portfolio" class="button big scrolly">想了解更多？</a>
+						</div>
+					</div>
+				</article>
+			</div>
+
+		<!-- Portfolio -->
+			<div class="wrapper style3">
+				<article id="portfolio">
+					<header>
+						<h2>关于前端</h2>
+						<p>由于对技术的热爱，以下是我学习过程中做的项目</p>
+					</header>
+					<div class="container">
+						<div class="row">
+							<div class="4u 12u(mobile)">
+								<article class="box style2">
+									<a href="./assets/html/html5.html" class="image featured"><img src="./assets/images/html55.png" alt="" /></a>
+									<h3><a href="./assets/html/html5.html">HTML5 项目实例</a></h3>
+									<p>HTML5是HTML的一个新版本</p>
+								</article>
+							</div>
+							<div class="4u 12u(mobile)">
+								<article class="box style2">
+									<a href="./assets/html/css3.html" class="image featured"><img src="./assets/images/css33.png" alt="" /></a>
+									<h3><a href="./assets/html/css3.html">CSS3 项目实例</a></h3>
+									<p>CSS3是CSS技术的升级版本</p>
+								</article>
+							</div>
+							<div class="4u 12u(mobile)">
+								<article class="box style2">
+									<a href="./assets/html/javascript.html" class="image featured"><img src="./assets/images/JavaScript1.png" alt="" /></a>
+									<h3><a href="./assets/html/javascript.html">JavaScript 项目实例</a></h3>
+									<p>JavaScript一种直译式脚本语言</p>
+								</article>
+							</div>
+						</div>
+						<div class="row">
+							<div class="4u 12u(mobile)">
+								<article class="box style2">
+									<a href="./assets/html/jQuery.html" class="image featured"><img src="./assets/images/jQuery1.png" alt="" /></a>
+									<h3><a href="./assets/html/jQuery.html">jQuery 项目实例</a></h3>
+									<p>jQuery就是javascript的一个库</p>
+								</article>
+							</div>
+							<div class="4u 12u(mobile)">
+								<article class="box style2">
+									<a href="./assets/html/web.html" class="image featured"><img src="./assets/images/tu.png" alt="" /></a>
+									<h3><a href="./assets/html/web.html">网站 项目实例</a></h3>
+									<p>做个网页练练手</p>
+								</article>
+							</div>
+							<div class="4u 12u(mobile)">
+								<article class="box style2">
+									<a href="./assets/html/kuangjia.html" class="image featured"><img src="./assets/images/vue.png" alt="" /></a>
+									<h3><a href="./assets/html/kuangjia.html">框架 项目实例</a></h3>
+									<p>Vue React</p>
+								</article>
+							</div>
+						</div>
+					</div>
+					<footer>
+						<p>以上是自己学习过程中做的小案例，仅供参考</p>
+						<a href="#contact" class="button big scrolly">联系我</a>
+					</footer>
+				</article>
+			</div>
+
+		<!-- Contact -->
+			<div class="wrapper wrapperer style4" id="footer">
+				<article id="contact" class="container 75%">
+					<div>
+						<div class="row">
+							<div class="12u">
+								<hr />
+								<h3>换主题颜色</h3>
+								<ul class="social">
+									<li hex="#2DAAE4"><a href="javascript:" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+									<li hex="#3C5A98"><a href="javascript:" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+									<li hex="#C4376B"><a href="javascript:" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+									<li hex="#006599"><a href="javascript:" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+								</ul>
+								<hr />
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+			<script src="assets/js/jquery-3.3.1.min.js"></script>
+			<script>
+				window.onload = function(){	//页面加载完成后
+					//设置主题
+					$('.social').on('click','li',function(e){	
+						e.preventDefault();	//阻止默认时间
+						e.stopPropagation(); //阻止冒泡行为
+						var color = $(this).attr('hex');
+						$('#nav').css('background-color',color);
+						$('.wrapper.style4').css('background-color',color);
+						//设置被选中的颜色
+						$(this).siblings().find('a').css('border-color','#ddd');
+						$(this).find('a').css('border-color','#1F00CB');
+					})
+				}
+			</script>
+	</body>
+</html>

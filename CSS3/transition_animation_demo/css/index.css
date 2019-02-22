@@ -1,0 +1,136 @@
+body,ul,li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.wrapper{
+    margin: 50px auto;
+    width: 80%;
+    height: 300px;
+    min-width: 500px;
+}
+.wrapper ul{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.wrapper li{
+    display: inline-block;
+    position: relative;
+    margin-left: 10px;
+    width: 300px;
+    border: 1px solid gray;
+    border-radius: 20px;
+    background-color: black;
+    overflow: hidden;
+}
+.wrapper li img{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 60px;
+    transform: translateY(101%);
+}
+.ulbg li img{
+    transform: translateY(0);  
+    transition: transform 1s linear; 
+}
+ul li:nth-child(1) img{
+    transition-delay: 0;
+}
+.ulbg li:nth-child(2) img{
+    transition-delay: 0.1s;
+}
+.ulbg li:nth-child(3) img{
+    transition-delay: 0.2s;
+}
+.ulbg li:nth-child(4) img{
+    transition-delay: 0.3s;
+}
+.ulbg li:nth-child(5) img{
+    transition-delay: 0.4s;
+}
+.ulbg li:nth-child(6) img{
+    transition-delay: 0.5s;
+}
+.textbox {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+}
+.textbox .content{
+    display: inline-block;
+    width: 100%;
+    height: 50px;
+    font-size: 12px;
+    background: linear-gradient(to top,blue 10%,white) ;  
+    overflow: hidden;
+    transform: translate(0,100%);
+}
+li .textbox .inbottom,li .textbox .outbottom{
+    transform: translate(0,100%);
+}
+li .textbox .inup,li .textbox .outup{
+    transform: translate(0,-100%);
+}
+li .textbox .inleft,li .textbox .outleft{
+    transform: translate(-100%,0);
+}
+li .textbox .inright,li .textbox .outright{
+    transform: translate(100%,0);
+}
+@keyframes movein{
+    100%{
+        transform: translate(0,0);
+    }
+}
+li .textbox .inbottom,li .textbox .inup,li .textbox .inleft,li .textbox .inright{
+    animation: movein 1s linear forwards;
+}
+@keyframes upout{
+    0%{
+        transform: translate(0,0);
+    }
+    100%{
+        transform: translate(0,-100%);
+    }
+}
+@keyframes bottomout{
+    0%{
+        transform: translate(0,0);
+    }
+    100%{
+        transform: translate(0,100%);
+    }
+}
+@keyframes leftout{
+    0%{
+        transform: translate(0,0);
+    }
+    100%{
+        transform: translate(-100%,0);
+    }
+}
+@keyframes rightout{
+    0%{
+        transform: translate(0,0);
+    }
+    100%{
+        transform: translate(100%,0);
+    } 
+}
+li .textbox .outup{
+    animation: upout 0.5s linear forwards;
+}
+li .textbox .outbottom{
+    animation: bottomout 0.5s linear forwards;
+}
+li .textbox .outleft{
+    animation: leftout 0.5s linear forwards;
+}
+li .textbox .outright{
+    animation: rightout 0.5s linear forwards;
+}
