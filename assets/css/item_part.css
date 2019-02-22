@@ -1,0 +1,128 @@
+/* item  项目说明 */
+.item{
+    position: relative;
+}
+.item .textbox{
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    line-height: 50px;
+    width: 100%;
+    overflow: hidden;
+    z-index: 2;
+}
+.textbox .content{
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    color: #fff;
+    background:rgba(161, 36, 74, 0.7);
+    transform: translate(0,100%);
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden; 
+}
+@media (min-width:780px) and (max-width:1000px){
+    .item .textbox{
+        height: 45px;
+        line-height: 45px;
+    }
+    .textbox .content{
+        height: 45px;
+        font-size: 16px;
+    }
+}
+@media (max-width:781px) and (min-width:501px){
+    .item .textbox{
+        height: 30px;
+        line-height: 30px;
+    }
+    .textbox .content{
+        height: 30px;
+        font-size: 0.2rem;
+ 
+    }
+}
+@media (max-width:500px){
+    .item .textbox{
+        height: 15px;
+        line-height: 15px;
+    }
+    .textbox .content{
+        height: 15px;
+        font-size: 0.1rem;
+    }
+}
+.item img{
+    width: 320px;
+    vertical-align: bottom;
+}
+/* 先固定初始化一下进入那一刻的位置 */
+.textbox .inbottom, .textbox .outbottom{
+    transform: translate(0,100%);
+}
+.textbox .intop, .textbox .outup{
+    transform: translate(0,-100%);
+}
+.textbox .inleft, .textbox .outleft{
+    transform: translate(-100%,0);
+}
+.textbox .inright, .textbox .outright{
+    transform: translate(100%,0);
+}
+/* 设定移入进去的效果 */
+@keyframes movein{
+    100%{
+        transform: translate(0,0);
+    }
+}
+/* 执行 */
+.textbox .inbottom, .textbox .intop, .textbox .inleft, .textbox .inright{
+    animation: movein 1s linear forwards;
+}
+/* 移出的方向及最后位置都不一样，要各自设定一下 */
+@keyframes upout{
+    0%{
+        transform: translate(0,0);
+    }
+    100%{
+        transform: translate(0,-100%);
+    }
+}
+@keyframes bottomout{
+    0%{
+        transform: translate(0,0);
+    }
+    100%{
+        transform: translate(0,100%);
+    }
+}
+@keyframes leftout{
+    0%{
+        transform: translate(0,0);
+    }
+    100%{
+        transform: translate(-100%,0);
+    }
+}
+@keyframes rightout{
+    0%{
+        transform: translate(0,0);
+    }
+    100%{
+        transform: translate(100%,0);
+    } 
+}
+li .textbox .outtop{
+    animation: upout 0.5s linear forwards;
+}
+li .textbox .outbottom{
+    animation: bottomout 0.5s linear forwards;
+}
+li .textbox .outleft{
+    animation: leftout 0.5s linear forwards;
+}
+li .textbox .outright{
+    animation: rightout 0.5s linear forwards;
+}
